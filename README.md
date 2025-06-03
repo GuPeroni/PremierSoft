@@ -111,7 +111,6 @@ uvicorn app.main:app --reload --port 8000
 - ✅ **JSON nativo** para dados flexíveis
 - ✅ **Particionamento** para bilhões de registros
 - ✅ **Recursos enterprise** (PL/SQL, Data Guard)
-- ❌ **Custo de licensing** (mitigado com Oracle Cloud)
 
 **Redis:**
 - ✅ **Cache sub-ms** para reads frequentes
@@ -129,9 +128,6 @@ uvicorn app.main:app --reload --port 8000
 - ✅ **Controle total** sobre recursos e scaling
 - ✅ **Multi-cloud** portability
 - ✅ **Ecosystem maduro** (monitoring, logging)
-- ❌ **Complexidade operacional** maior
-
-**Trade-off**: Para escala extrema (100M+ requests/day), consideraríamos hybrid approach.
 
 ### 4. **Arquitetura em Camadas vs Event-Driven**
 **Escolha: Clean Architecture (Layered)**
