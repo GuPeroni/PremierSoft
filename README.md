@@ -271,8 +271,6 @@ Business Metrics:
 - **[kubernetes-deployment.md](docs/kubernetes-deployment.md)** - Deploy K8s completo
 - **[ci-cd-pipeline.md](docs/ci-cd-pipeline.md)** - Pipeline CI/CD automatizado
 - **[testing-strategy.md](docs/testing-strategy.md)** - Estratégia de testes
-- **[cost-analysis.md](docs/cost-analysis.md)** - Análise custos cloud
-- **[future-roadmap.md](docs/future-roadmap.md)** - Roadmap evolução
 
 ### API Documentation
 - **Swagger UI**: http://localhost:8000/docs
