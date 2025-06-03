@@ -564,5 +564,3 @@ class TestOraclePerformance:
         
         print(f"Bulk insert performance: {throughput:.1f} records/second")
 ```
-
-Esta versão simplificada mantém os elementos essenciais da estratégia de testes, focando na implementação prática e removendo detalhamento excessivo, mas preservando a qualidade e cobertura necessárias.
