@@ -1,21 +1,21 @@
 # Microsserviço de Dados - High Performance Data API
 
-## 📋 Visão Geral do Projeto
+## Visão Geral do Projeto
 
 Microsserviço escalável para gerenciamento de dados com **Oracle Database**, capaz de lidar com milhões de registros mantendo performance sub-500ms. Desenvolvido com **FastAPI**, **SQLAlchemy** e **Redis**.
 
-### 🎯 Objetivos Atendidos
-- ✅ **Performance**: Response time < 500ms (P95)
-- ✅ **Escalabilidade**: Suporte a bilhões de registros com < 10% degradação
-- ✅ **Alta Disponibilidade**: Deploy resiliente no Kubernetes
-- ✅ **Enterprise-Grade**: Oracle Database com recursos avançados
+### Objetivos Atendidos
+- **Performance**: Response time < 500ms (P95)
+- **Escalabilidade**: Suporte a bilhões de registros com < 10% degradação
+- **Alta Disponibilidade**: Deploy resiliente no Kubernetes
+- **Enterprise-Grade**: Oracle Database com recursos avançados
 
-### 🏗️ Arquitetura
+### Arquitetura
 ```
 Internet → Load Balancer → API Gateway → FastAPI App → Oracle DB + Redis
 ```
 
-## 🚀 Setup e Deployment
+## Setup e Deployment
 
 ### Pré-requisitos
 - Docker 20.10+
@@ -23,7 +23,7 @@ Internet → Load Balancer → API Gateway → FastAPI App → Oracle DB + Redis
 - Kubernetes 1.24+ (para deploy em produção)
 - Python 3.11+ (para desenvolvimento local)
 
-### 🐳 Quick Start com Docker
+### Quick Start com Docker
 
 1. **Clone e Execute:**
 ```bash
@@ -49,7 +49,7 @@ curl -X POST http://localhost:8000/data \
 curl "http://localhost:8000/data?user_id=user123"
 ```
 
-### ☸️ Deploy no Kubernetes
+### Deploy no Kubernetes
 
 1. **Aplicar Manifests:**
 ```bash
@@ -65,7 +65,7 @@ kubectl get pods -l app=data-microservice
 kubectl get svc data-microservice-service
 ```
 
-### 🛠️ Desenvolvimento Local
+### Desenvolvimento Local
 
 1. **Setup Ambiente:**
 ```bash
@@ -90,7 +90,7 @@ uvicorn app.main:app --reload --port 8000
 # Docs interativa: http://localhost:8000/docs
 ```
 
-## 🔧 Principais Decisões Técnicas
+## Principais Decisões Técnicas
 
 ### 1. **FastAPI vs Django/Flask**
 **Escolha: FastAPI**
@@ -107,15 +107,15 @@ uvicorn app.main:app --reload --port 8000
 **Escolha: Oracle Database como primary + Redis como cache**
 
 **Oracle Database:**
-- ✅ **ACID compliance** para consistência
-- ✅ **JSON nativo** para dados flexíveis
-- ✅ **Particionamento** para bilhões de registros
-- ✅ **Recursos enterprise** (PL/SQL, Data Guard)
+- **ACID compliance** para consistência
+- **JSON nativo** para dados flexíveis
+- **Particionamento** para bilhões de registros
+- **Recursos enterprise** (PL/SQL, Data Guard)
 
 **Redis:**
-- ✅ **Cache sub-ms** para reads frequentes
-- ✅ **Rate limiting** e sessões
-- ✅ **Pub/sub** para eventos
+- **Cache sub-ms** para reads frequentes
+- **Rate limiting** e sessões
+- **Pub/sub** para eventos
 
 **Alternativas Consideradas:**
 - **PostgreSQL**: Menos recursos enterprise, mas open source
@@ -125,9 +125,9 @@ uvicorn app.main:app --reload --port 8000
 **Escolha: Kubernetes**
 
 **Justificativa:**
-- ✅ **Controle total** sobre recursos e scaling
-- ✅ **Multi-cloud** portability
-- ✅ **Ecosystem maduro** (monitoring, logging)
+- **Controle total** sobre recursos e scaling
+- **Multi-cloud** portability
+- **Ecosystem maduro** (monitoring, logging)
 
 ### 4. **Arquitetura em Camadas vs Event-Driven**
 **Escolha: Clean Architecture (Layered)**
@@ -137,14 +137,14 @@ Controller → Service → Repository → Model
 ```
 
 **Vantagens:**
-- ✅ **Separação clara** de responsabilidades
-- ✅ **Testing** mais simples (mocking)
-- ✅ **Manutenibilidade** alta
-- ✅ **Time-to-market** mais rápido
+- **Separação clara** de responsabilidades
+- **Testing** mais simples (mocking)
+- **Manutenibilidade** alta
+- **Time-to-market** mais rápido
 
 **Evolução Futura**: Event-Driven para escala extrema com Apache Kafka.
 
-## ⚡ Estratégias de Performance
+## Estratégias de Performance
 
 ### Database Optimization
 - **Connection pooling**: SQLAlchemy async (10-50 connections)
@@ -164,7 +164,7 @@ Controller → Service → Repository → Model
 - **Pagination**: Cursor-based para large datasets
 - **Rate limiting**: 100 req/min por usuário
 
-## 📊 Benchmarks e Métricas
+## Benchmarks e Métricas
 
 ### Performance Alcançada
 ```yaml
@@ -188,7 +188,7 @@ Availability:
 - **Global latency**: < 150ms multi-region
 - **Data volume**: Suporte a 1TB+ com particionamento
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 ### Cobertura de Testes
 ```yaml
@@ -221,7 +221,7 @@ k6 run tests/performance/load-test.js
 pytest tests/performance/oracle_performance.py
 ```
 
-## 🔐 Segurança
+## Segurança
 
 ### Security by Design
 - **Input validation**: Pydantic schemas com validação rigorosa
@@ -235,7 +235,7 @@ pytest tests/performance/oracle_performance.py
 - **Data protection**: Encryption at rest e in transit
 - **Access control**: RBAC no Kubernetes
 
-## 📈 Monitoramento
+## Monitoramento
 
 ### Health Checks
 ```bash
@@ -263,7 +263,7 @@ Business Metrics:
 - **Critical**: Response time > 500ms, Error rate > 1%
 - **Warning**: Cache hit rate < 70%, Resource usage > 80%
 
-## 📚 Documentação Técnica
+## Documentação Técnica
 
 ### Documentos Disponíveis
 - **[architecture.md](docs/architecture.md)** - Arquitetura detalhada do sistema
@@ -277,7 +277,7 @@ Business Metrics:
 - **ReDoc**: http://localhost:8000/redoc
 - **OpenAPI Schema**: http://localhost:8000/openapi.json
 
-## 🤝 Desenvolvimento
+## Desenvolvimento
 
 ### Code Standards
 - **Code Style**: Black + flake8
@@ -301,9 +301,3 @@ Production Deploy:
 ```
 
 ---
-
-## 🏆 Bottom Line
-
-**Enterprise-ready microsserviço que combina performance sub-500ms, escalabilidade para bilhões de registros e robustez Oracle Database, com arquitetura cloud-native e observabilidade completa.**
-
-**Stack Principal**: FastAPI + Oracle Database + Redis + Kubernetes
