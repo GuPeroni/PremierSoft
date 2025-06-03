@@ -239,3 +239,73 @@ pytest tests/performance/oracle_performance.py
 
 ### Health Checks
 ```bash
+# Liveness probe
+GET /health → {"status": "healthy"}
+
+# Readiness probe
+GET /ready → {"status": "ready", "checks": {"database": true, "cache": true}}
+```
+
+### Métricas (Prometheus)
+```yaml
+Application Metrics:
+  - request_duration_seconds{method, endpoint}
+  - requests_total{method, endpoint, status}
+  - oracle_connections_active
+  - cache_hit_rate
+
+Business Metrics:
+  - data_records_created_total
+  - unique_users_active
+```
+
+### Alerting
+- **Critical**: Response time > 500ms, Error rate > 1%
+- **Warning**: Cache hit rate < 70%, Resource usage > 80%
+
+## 📚 Documentação Técnica
+
+### Documentos Disponíveis
+- **[architecture.md](docs/architecture.md)** - Arquitetura detalhada do sistema
+- **[containerization.md](docs/containerization.md)** - Estratégia Docker + Oracle
+- **[kubernetes-deployment.md](docs/kubernetes-deployment.md)** - Deploy K8s completo
+- **[ci-cd-pipeline.md](docs/ci-cd-pipeline.md)** - Pipeline CI/CD automatizado
+- **[testing-strategy.md](docs/testing-strategy.md)** - Estratégia de testes
+- **[cost-analysis.md](docs/cost-analysis.md)** - Análise custos cloud
+- **[future-roadmap.md](docs/future-roadmap.md)** - Roadmap evolução
+
+### API Documentation
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
+- **OpenAPI Schema**: http://localhost:8000/openapi.json
+
+## 🤝 Desenvolvimento
+
+### Code Standards
+- **Code Style**: Black + flake8
+- **Type Hints**: mypy validation
+- **Commit Messages**: Conventional Commits
+- **Branching**: GitFlow (main/develop/feature/*)
+
+### CI/CD Pipeline
+```yaml
+Pull Request:
+  - Code quality checks
+  - Unit + integration tests
+  - Security scanning
+  - Build validation
+
+Production Deploy:
+  - Database migrations
+  - Blue/green deployment
+  - Health verification
+  - Performance validation
+```
+
+---
+
+## 🏆 Bottom Line
+
+**Enterprise-ready microsserviço que combina performance sub-500ms, escalabilidade para bilhões de registros e robustez Oracle Database, com arquitetura cloud-native e observabilidade completa.**
+
+**Stack Principal**: FastAPI + Oracle Database + Redis + Kubernetes
