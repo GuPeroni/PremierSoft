@@ -150,9 +150,9 @@ Stages:
 #### 2. **Oracle Instant Client 21.11**
 ```yaml
 Escolha vs Alternativas:
-  ✅ Instant Client: Footprint menor (180MB vs 2GB Oracle XE)
-  ✅ Version 21.11: Latest stable com melhor performance
-  ✅ Multi-stage: Build tools não vão para produção
+  Instant Client: Footprint menor (180MB vs 2GB Oracle XE)
+  Version 21.11: Latest stable com melhor performance
+  Multi-stage: Build tools não vão para produção
 
 Configuração:
   - ORACLE_HOME: Path do client
