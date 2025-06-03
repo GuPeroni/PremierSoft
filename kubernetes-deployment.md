@@ -969,50 +969,6 @@ spec:
   schedule: "0 2 * * *"  # Daily at 2 AM
 ```
 
-Esta estratégia de deployment Kubernetes foi projetada para fornecer alta disponibilidade, escalabilidade e operação enterprise-grade com Oracle Database, incluindo todas as considerações de segurança, monitoramento e disaster recovery necessárias para um ambiente de produção.                  Internet                             │
-└─────────────────┬───────────────────────────────────────┘
-                  │
-┌─────────────────▼───────────────────────────────────────┐
-│                 Ingress Controller                      │
-│               (NGINX/HAProxy)                           │
-│  ┌─────────────────────────────────────────────────┐   │
-│  │  SSL Termination + Load Balancing             │   │
-│  │  - TLS 1.3                                     │   │
-│  │  - Rate Limiting                               │   │
-│  │  - Path-based Routing                          │   │
-│  └─────────────────────────────────────────────────┘   │
-└─────────────────┬───────────────────────────────────────┘
-                  │
-┌─────────────────▼───────────────────────────────────────┐
-│              Kubernetes Services                        │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
-│  │ App Service  │  │Oracle Service│  │Redis Service │ │
-│  │ (ClusterIP)  │  │ (ClusterIP)  │  │ (ClusterIP)  │ │
-│  └──────────────┘  └──────────────┘  └──────────────┘ │
-└─────────────────┬───────────────────────────────────────┘
-                  │
-┌─────────────────▼───────────────────────────────────────┐
-│                Pod Layer                                │
-│  ┌─────────────────────────────────────────────────┐   │
-│  │          Application Pods (HPA)                 │   │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │   │
-│  │  │    App      │  │    App      │  │   App   │ │   │
-│  │  │   Pod 1     │  │   Pod 2     │  │  Pod 3  │ │   │
-│  │  │             │  │             │  │         │ │   │
-│  │  └─────────────┘  └─────────────┘  └─────────┘ │   │
-│  └─────────────────────────────────────────────────┘   │
-│                                                         │
-│  ┌─────────────────────────────────────────────────┐   │
-│  │          Database Pods (StatefulSet)            │   │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │   │
-│  │  │   Oracle    │  │   Oracle    │  │  Redis  │ │   │
-│  │  │  Primary    │  │  Standby    │  │  Cache  │ │   │
-│  │  │             │  │ (Data Guard)│  │         │ │   │
-│  │  └─────────────┘  └─────────────┘  └─────────┘ │   │
-│  └─────────────────────────────────────────────────┘   │
-└─────────────────┬───────────────────────────────────────┘
-```
-
 ## Manifestos Kubernetes
 
 ### 1. Namespace e RBAC
