@@ -261,11 +261,11 @@ Business Metrics:
 ## Documentação Técnica
 
 ### Documentos Disponíveis
-- **[architecture.md](docs/architecture.md)** - Arquitetura detalhada do sistema
-- **[containerization.md](docs/containerization.md)** - Estratégia Docker + Oracle
-- **[kubernetes-deployment.md](docs/kubernetes-deployment.md)** - Deploy K8s completo
-- **[ci-cd-pipeline.md](docs/ci-cd-pipeline.md)** - Pipeline CI/CD automatizado
-- **[testing-strategy.md](docs/testing-strategy.md)** - Estratégia de testes
+- **[architecture.md](architecture.md)** - Arquitetura detalhada do sistema
+- **[containerization.md](containerization.md)** - Estratégia Docker + Oracle
+- **[kubernetes-deployment.md](kubernetes-deployment.md)** - Deploy K8s completo
+- **[ci-cd-pipeline.md](ci-cd-pipeline.md)** - Pipeline CI/CD automatizado
+- **[testing-strategy.md](testing-strategy.md)** - Estratégia de testes
 
 ### API Documentation
 - **Swagger UI**: http://localhost:8000/docs
