@@ -101,8 +101,6 @@ uvicorn app.main:app --reload --port 8000
 - **Validação**: Pydantic integrado nativamente
 - **Async**: Suporte nativo async/await
 
-**Trade-off**: Curva de aprendizado maior, mas ROI em performance e produtividade.
-
 ### 2. **Oracle Database + Redis vs Alternativas**
 **Escolha: Oracle Database como primary + Redis como cache**
 
@@ -140,9 +138,6 @@ Controller → Service → Repository → Model
 - **Separação clara** de responsabilidades
 - **Testing** mais simples (mocking)
 - **Manutenibilidade** alta
-- **Time-to-market** mais rápido
-
-**Evolução Futura**: Event-Driven para escala extrema com Apache Kafka.
 
 ## Estratégias de Performance
 
